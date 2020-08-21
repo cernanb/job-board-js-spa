@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all
-    render json: @companies, include: [:jobs]
+    render json: @companies, methods: [:job_num]
   end
 end
