@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css"
+    />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  </head>
+  <body>
+    <div class="relative bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div
+          class="flex justify-between items-center py-6 md:justify-start md:space-x-10"
+        >
+          <nav class="md:flex space-x-10 mx-auto">
+            <a
+              href="#"
+              id="jobs-nav"
+              class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
+            >
+              Jobs
+            </a>
+            <a
+              href="#"
+              id="companies-nav"
+              class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
+            >
+              Companies
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap mb-4">
+      <div class="w-full md:w-1/2">
+        <div class="container mx-auto px-5 py-6">
+          <form id="job-form">
+            <div>
+              <div>
+                <div>
+                  <h3 class="text-lg leading-6 font-medium text-gray-900">
+                    Create Job
+                  </h3>
+                  <p class="mt-1 text-sm leading-5 text-gray-500">
+                    Use the form below to add a new job to the board.
+                  </p>
+                </div>
+                <div
+                  class="mt-6 grid grid-cols-1 row-gap-6 col-gap-4 sm:grid-cols-6"
+                >
+                  <div class="sm:col-span-4">
+                    <label
+                      for="title"
+                      class="block text-sm font-medium leading-5 text-gray-700"
+                    >
+                      Title
+                    </label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                      <input
+                        id="title"
+                        name="job[title]"
+                        class="flex-1 form-input block w-full min-w-0 rounded-none rounded-r-md transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-6">
+                    <label
+                      for="about"
+                      class="block text-sm font-medium leading-5 text-gray-700"
+                    >
+                      Description
+                    </label>
+                    <div class="mt-1 rounded-md shadow-sm">
+                      <textarea
+                        id="description"
+                        name="job[description]"
+                        rows="3"
+                        class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                      ></textarea>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-500">
+                      Add a small description about the role.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 border-t border-gray-200 pt-8">
+                <div class="mt-6">
+                  <fieldset class="mt-6">
+                    <legend class="text-base font-medium text-gray-900">
+                      Job Type
+                    </legend>
+                    <div class="mt-4">
+                      <div class="flex items-center">
+                        <input
+                          id="push_everything"
+                          name="job[job_type]"
+                          value="0"
+                          type="radio"
+                          class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                        />
+                        <label for="push_everything" class="ml-3">
+                          <span
+                            class="block text-sm leading-5 font-medium text-gray-700"
+                            >Full Time</span
+                          >
+                        </label>
+                      </div>
+                      <div class="mt-4 flex items-center">
+                        <input
+                          id="push_email"
+                          name="job[job_type]"
+                          value="1"
+                          type="radio"
+                          class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                        />
+                        <label for="push_email" class="ml-3">
+                          <span
+                            class="block text-sm leading-5 font-medium text-gray-700"
+                            >Part Time</span
+                          >
+                        </label>
+                      </div>
+                      <div class="mt-4 flex items-center">
+                        <input
+                          id="push_nothing"
+                          name="job[job_type]"
+                          value="2"
+                          type="radio"
+                          class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                        />
+                        <label for="push_nothing" class="ml-3">
+                          <span
+                            class="block text-sm leading-5 font-medium text-gray-700"
+                            >Contract</span
+                          >
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="mt-4">
+                    <label
+                      for="location"
+                      class="block text-sm leading-5 font-medium text-gray-700"
+                      >Company</label
+                    >
+                    <select
+                      id="location"
+                      name="job[company_id]"
+                      class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
+                    >
+                      <option value="1">Cartwright, Zulauf and Quigley</option>
+                      <option value="2">Cassin, Wunsch and Green</option>
+                      <option value="3">Wintheiser, Bernhard and Lang</option>
+                      <option value="4">Von Inc</option>
+                      <option value="5">Huel-Vandervort</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-5">
+              <div class="flex justify-end">
+                <span class="inline-flex rounded-md shadow-sm">
+                  <button
+                    type="button"
+                    class="py-2 px-4 border border-gray-300 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out"
+                  >
+                    Cancel
+                  </button>
+                </span>
+                <span class="ml-3 inline-flex rounded-md shadow-sm">
+                  <button
+                    type="submit"
+                    class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                  >
+                    Save
+                  </button>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="container mx-auto px-6 py-6" id="app"></div>
+      </div>
+    </div>
+
+    <script
+      type="application/javascript"
+      src="src/components/Company.js"
+      charset="UTF-8"
+    ></script>
+    <script
+      type="application/javascript"
+      src="src/components/Job.js"
+      charset="UTF-8"
+    ></script>
+    <script
+      type="application/javascript"
+      src="src/services/ApiService.js"
+      charset="UTF-8"
+    ></script>
+    <script
+      type="application/javascript"
+      src="src/index.js"
+      charset="UTF-8"
+    ></script>
+  </body>
+</html>
