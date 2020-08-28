@@ -1,10 +1,14 @@
 class Job {
+
+  static allJobs = []
+
   constructor(data) {
     this.id = data.id;
     this.title = data.title;
     this.description = data.description;
     this.companyName = data.company_name;
     this.job_type = data.job_type;
+    Job.allJobs.push(this)
   }
 
   renderIndexUI() {

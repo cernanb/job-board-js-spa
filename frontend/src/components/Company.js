@@ -1,8 +1,12 @@
 class Company {
+
+  static allCompanies = []
+
   constructor(data) {
     this.name = data.name;
     this.location = data.location;
     this.job_num = data.job_num;
+    Company.allCompanies.push(this)
   }
 
   renderIndexUI() {
